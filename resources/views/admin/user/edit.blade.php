@@ -12,10 +12,7 @@ Edit User
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Post</li>
-    </ol>
+    {{Breadcrumbs::render('editUser', $user->id)}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -25,7 +22,7 @@ Edit User
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>Edit User</h4>
+                            data-feather="user"></i></span></span>Edit User</h4>
         </div>
     </div>
     <!-- /Title -->

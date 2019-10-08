@@ -6,10 +6,7 @@ List User
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Post</li>
-    </ol>
+    {{Breadcrumbs::render('users',$users)}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -19,7 +16,7 @@ List User
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>List User</h4>
+                            data-feather="users"></i></span></span>List User</h4>
         </div>
         <div class="d-flex">
             <a href="{{route('user.create')}}" class="btn btn-primary btn-sm">Create New User</a>

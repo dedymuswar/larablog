@@ -6,10 +6,11 @@ List Post
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
+    {{Breadcrumbs::render('post',$posts)}}
+    {{-- <ol class="breadcrumb breadcrumb-light bg-transparent">
         <li class="breadcrumb-item"><a href="#">Pages</a></li>
         <li class="breadcrumb-item active" aria-current="page">Post</li>
-    </ol>
+    </ol> --}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -19,7 +20,7 @@ List Post
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>Post</h4>
+                            data-feather="edit"></i></span></span>Post</h4>
         </div>
         <div class="d-flex">
             <a href="{{route('post.create')}}" class="btn btn-primary btn-sm">Create Post</a>

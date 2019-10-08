@@ -6,10 +6,7 @@ Tag
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Tag</li>
-    </ol>
+    {{Breadcrumbs::render('tags', $tags)}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -19,7 +16,7 @@ Tag
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>Tags</h4>
+                            data-feather="paperclip"></i></span></span>Tags</h4>
         </div>
         <div class="d-flex">
             <a href="javascript:void(0);" id="create-tag" class="btn btn-primary btn-sm">Create New Tag</a>

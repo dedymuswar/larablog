@@ -14,7 +14,7 @@
 use Spatie\Permission\Models\Role;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.home.index');
     // ROLE
     // Assign user have role
     // auth()->user()->assignRole('user');
@@ -83,4 +83,8 @@ Route::group(['middleware' => ['role:admin|user']], function () {
     Route::get('logout', 'Auth\LoginController@logout');
 });
 
+
+Route::get('webhome', 'WebblogController@webhome')->name('webhome');
+Route::get('posts', 'WebblogController@webblog')->name('allposts');
+Route::get('posts/{slug}', ['as' => 'blog.artikel', 'uses' => 'WebblogController@artikel'])->where('slug', '[\w\d\-\_]+');
 Auth::routes();

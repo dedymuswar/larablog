@@ -20,8 +20,9 @@ Dashboard Page
                             </div>
                         </div>
                         <div class="text-center">
-                            <span class="d-block display-4 text-dark mb-5">36.1K</span>
-                            <small class="d-block">172,458 Target Users</small>
+                            <span class="d-block display-4 text-dark mb-5"><span
+                                    class="counter-anim">{{$countUsers}}</span></span>
+                            <small class="d-block">Role Admin dan User</small>
                         </div>
                     </div>
                 </div>
@@ -32,8 +33,7 @@ Dashboard Page
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <span class="d-block font-15 text-dark font-weight-500">Campaign
-                                    Leads</span>
+                                <span class="d-block font-15 text-dark font-weight-500">Jumlah Artikel</span>
                             </div>
                             <div>
                                 <span class="text-success font-14 font-weight-500">+12.5%</span>
@@ -41,7 +41,7 @@ Dashboard Page
                         </div>
                         <div class="text-center">
                             <span class="d-block display-4 text-dark mb-5"><span
-                                    class="counter-anim">168,856</span></span>
+                                    class="counter-anim">{{$countPosts}}</span></span>
                             <small class="d-block">472,458 Targeted</small>
                         </div>
                     </div>
@@ -52,15 +52,15 @@ Dashboard Page
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <span class="d-block font-15 text-dark font-weight-500">New
-                                    Contacts</span>
+                                <span class="d-block font-15 text-dark font-weight-500">Categories</span>
                             </div>
                             <div>
                                 <span class="text-warning font-14 font-weight-500">-2.8%</span>
                             </div>
                         </div>
                         <div class="text-center">
-                            <span class="d-block display-4 text-dark mb-5">73</span>
+                            <span class="d-block display-4 text-dark mb-5"><span
+                                    class="counter-anim">{{$countCategories}}</span></span>
                             <small class="d-block">100 Targeted</small>
                         </div>
                     </div>
@@ -71,15 +71,15 @@ Dashboard Page
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <span class="d-block font-15 text-dark font-weight-500">Win/Loss
-                                    Ratio</span>
+                                <span class="d-block font-15 text-dark font-weight-500">Tags</span>
                             </div>
                             <div>
                                 <span class="text-danger font-14 font-weight-500">-75%</span>
                             </div>
                         </div>
                         <div class="text-center">
-                            <span class="d-block display-4 text-dark mb-5">48:65</span>
+                            <span class="d-block display-4 text-dark mb-5"><span
+                                    class="counter-anim">{{$countTags}}</span></span>
                             <small class="d-block">42:32 Targeted</small>
                         </div>
                     </div>

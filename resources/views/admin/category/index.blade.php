@@ -6,10 +6,7 @@ Categories
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Categories</li>
-    </ol>
+    {{Breadcrumbs::render('categories', $categories)}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -19,7 +16,7 @@ Categories
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>Categories</h4>
+                            data-feather="feather"></i></span></span>Categories</h4>
         </div>
         <div class="d-flex">
             <a href="javascript:void(0);" id="create-category" class="btn btn-primary btn-sm">Create New Category</a>

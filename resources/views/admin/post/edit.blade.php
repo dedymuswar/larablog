@@ -12,10 +12,11 @@ Edit Post
 @section('content')
 <!-- Breadcrumb -->
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
-    <ol class="breadcrumb breadcrumb-light bg-transparent">
+    {{Breadcrumbs::render('edit',$post->title)}}
+    {{-- <ol class="breadcrumb breadcrumb-light bg-transparent">
         <li class="breadcrumb-item"><a href="#">Pages</a></li>
         <li class="breadcrumb-item active" aria-current="page">Post</li>
-    </ol>
+    </ol> --}}
 </nav>
 <!-- /Breadcrumb -->
 
@@ -25,7 +26,7 @@ Edit Post
     <div class="hk-pg-header mb-10">
         <div>
             <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
-                            data-feather="book"></i></span></span>Create New Post</h4>
+                            data-feather="edit"></i></span></span>Edit Post</h4>
         </div>
     </div>
     <!-- /Title -->
@@ -142,7 +143,7 @@ Edit Post
                             </div>
                             <div class="form-group mb-0 col-sm-8">
                                 <div class="col-sm-10 offset-sm-2">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -162,11 +163,12 @@ Edit Post
 
 <!-- Jasny-bootstrap  JavaScript -->
 <script src="{{asset('js/jasny-bootstrap.min.js')}}"></script>
+<script src="{{asset('js/app/posts.js')}}"></script>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>
     tinymce.init({
         selector:'textarea.description',
-        width: 700,
+        width: 900,
         height: 300
     });
 </script>
