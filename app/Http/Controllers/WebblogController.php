@@ -20,6 +20,8 @@ class WebblogController extends Controller
     public function artikel($slug)
     {
         $posts = Post::where('slug', '=', $slug)->first();
+
+        \App\PostView::createViewLog($posts);
         return view('web.artikel.index', compact('posts'));
     }
 

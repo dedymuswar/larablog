@@ -84,6 +84,7 @@ Route::group(['middleware' => ['role:admin|user']], function () {
 });
 
 
+Route::get('view_post', 'PostViewController@CounterView')->name('counterview');
 Route::get('webhome', 'WebblogController@webhome')->name('webhome');
 Route::get('posts', 'WebblogController@webblog')->name('allposts');
 Route::get('posts/{slug}', ['as' => 'blog.artikel', 'uses' => 'WebblogController@artikel'])->where('slug', '[\w\d\-\_]+');
