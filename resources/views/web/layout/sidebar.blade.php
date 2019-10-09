@@ -34,33 +34,18 @@
         <div class="tab-content" id="tabs-posts-content">
             <div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="popular-tab">
                 <div class="post-thumbnail-list">
+                    @foreach ($popular as $item)
                     <div class="post-thumbnail-entry">
-                        <img alt="" src="{{asset('site/images/blog/thumbnail/5.jpg')}}">
+                        <img alt="" src="{{asset('images/'.$item->image)}}">
                         <div class="post-thumbnail-content">
-                            <a href="#">A true story, that never been told!</a>
-                            <span class="post-date"><i class="far fa-clock"></i> 6m ago</span>
+                            <a href="#">{!! Str::limit($item->title, 50, ' ...')!!}</a>
+                            <span class="post-date"><i
+                                    class="far fa-clock"></i>{{$item->created_at->diffForHumans()}}</span>
                             <span class="post-category"><i class="fa fa-tag"></i>
-                                Technology</span>
+                                {{$item->category->name_category}}</span>
                         </div>
                     </div>
-                    <div class="post-thumbnail-entry">
-                        <img alt="" src="{{asset('site/images/blog/thumbnail/6.jpg')}}">
-                        <div class="post-thumbnail-content">
-                            <a href="#">Beautiful nature, and rare feathers!</a>
-                            <span class="post-date"><i class="far fa-clock"></i> 24h ago</span>
-                            <span class="post-category"><i class="fa fa-tag"></i>
-                                Lifestyle</span>
-                        </div>
-                    </div>
-                    <div class="post-thumbnail-entry">
-                        <img alt="" src="{{asset('site/images/blog/thumbnail/7.jpg')}}">
-                        <div class="post-thumbnail-content">
-                            <a href="#">The most happiest time of the day!</a>
-                            <span class="post-date"><i class="far fa-clock"></i> 11h ago</span>
-                            <span class="post-category"><i class="fa fa-tag"></i>
-                                Lifestyle</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">

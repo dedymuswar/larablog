@@ -29,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('user', \App\User::dataUser());
         });
 
+        view()->composer('web.layout.sidebar', function ($view) {
+            $view->with('popular', \App\PostView::PopularView());
+        });
+
         Schema::defaultStringLength(191);
     }
 }
