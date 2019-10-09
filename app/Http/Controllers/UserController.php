@@ -41,7 +41,7 @@ class UserController extends Controller
         $this->validate($request, [
             'nama'         =>   'required',
             'email'          =>   'required|email',
-            'password'          =>   'required|min:6',
+            'password'          =>   'sometimes',
             'role'      =>   'required',
             'cover_image'         =>   'required|image|max:1999'
         ]);
@@ -51,7 +51,7 @@ class UserController extends Controller
             $image = $request->file('cover_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/user/' . $filename);
-            Image::make($image)->resize(800, 600)->save($location);
+            Image::make($image)->fit(600, 600, null)->save($location);
             $fileNameToStore = $filename;
         } else {
             $fileNameToStore = 'no-photo.png';
@@ -105,7 +105,7 @@ class UserController extends Controller
         $this->validate($request, [
             'nama'              =>   'required',
             'email'             =>   'required|email',
-            'password'          =>   'required|min:6',
+            'password'          =>   'sometimes',
             'role'              =>   'required',
             'cover_image'       =>   'image|max:1999'
         ]);
@@ -123,7 +123,7 @@ class UserController extends Controller
             $image = $request->file('cover_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/user/' . $filename);
-            Image::make($image)->resize(800, 600)->save($location);
+            Image::make($image)->fit(600, 600, null)->save($location);
             $fileNameToStore = $filename;
         } else {
             $fileNameToStore = $user->image;

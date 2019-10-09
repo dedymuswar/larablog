@@ -13,7 +13,7 @@ Dashboard Page
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-5">
                             <div>
-                                <span class="d-block font-15 text-dark font-weight-500">Users</span>
+                                <span class="d-block font-15 text-dark font-weight-500">Users list</span>
                             </div>
                             <div>
                                 <span class="text-success font-14 font-weight-500">+10%</span>

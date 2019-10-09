@@ -61,7 +61,7 @@ class PostController extends Controller
             $image = $request->file('cover_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/' . $filename);
-            Image::make($image)->resize(800, 600)->save($location);
+            Image::make($image)->fit(1000, 600, null, 'top-left')->save($location);
             $fileNameToStore = $filename;
         } else {
             $fileNameToStore = 'no-photo.png';
@@ -152,7 +152,7 @@ class PostController extends Controller
             $image = $request->file('cover_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/' . $filename);
-            Image::make($image)->resize(800, 600)->save($location);
+            Image::make($image)->fit(1000, 600, null)->save($location);
             $post->image = $filename;
         } else {
             $fileNameToStore = 'no-photo.png';
